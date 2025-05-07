@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <a href="index.html">torna all'indice</a>
+
+    <h1>Esempio Bottone</h1>
+
+    <button onclick="alert('click ok...')">Save</button>
+
+    <h2>Login Form</h2>
+
+    <form action="">
+
+        <label for="usr">Username:</label>
+        <input type="text" name="usr" placeholder="insert username" 
+            id="usr" required >
+
+        <label for="pwd">Password:</label>
+        <input type="password" name="pwd" placeholder="insert password" 
+            id="pwd" required>
+
+        <input type="submit" value="Login">
+
+    </form>
+
+    <h2>Registration Form</h2>
+
+    <form action="">
+
+        <label>
+            Nome:
+            <input type="text" name="nome">
+        </label>
+        
+        <label>
+            Cognome:
+            <input type="text" name="cognome">
+        </label>
+        
+        <label>
+            Data di nascita
+            <input type="date" name="dNascita">
+        </label>
+        
+        <label>
+            Colore preferito
+            <input type="color" name="prefCol">
+        </label>
+        
+        <p></p>
+        <label>
+            Lascia il tuo CV
+            <input type="file" name="cv">
+        </label>
+
+        <p>Sesso</p>
+
+        <label>
+            <input type="radio" name="sesso">
+            femmina
+        </label>
+
+        <label>
+            <input type="radio" name="sesso">
+            maschio
+        </label>
+        <label>
+            <input type="radio" name="sesso">
+            altro
+        </label>
+
+        <p>Hobbies</p>
+        <label>
+            <input type="checkbox" name="hobbies">
+            nuoto
+        </label>
+        <label>
+            <input type="checkbox" name="hobbies">
+            musica
+        </label>
+        <label>
+            <input type="checkbox" name="hobbies">
+            lettura
+        </label>
+
+        <p></p>
+        <label >
+            Comune di nascita
+            <select name="comune" >
+                <option value="Torino">Torino</option>
+                <option value="Livorno">Livorno</option>
+                <option value="Cagliari">Cagliari</option>
+            </select>
+        </label>
+
+        <label>
+            Email
+            <input type="email" name="email">
+        </label>
+
+        <input type="submit" value="Registrati">
+    </form>
+</body>
+
+</html>
