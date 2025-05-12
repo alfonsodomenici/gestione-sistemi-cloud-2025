@@ -1,5 +1,93 @@
-body{
+body {
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* 
+    selettore di tipo
+*/
+h1 {
+    font-size: 2.5em;
+    color: red;
+}
+
+/* 
+    selettore  list
+*/
+p,
+li {
+    font-size: 1.2em;
+    color: blue;
+}
+
+/*
+    selettore di tipo
+*/
+a {
+    text-decoration: none;
+    color:cadetblue ;
+}
+
+/* 
+    selettore di classe
+*/
+.special {
+    color: brown
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.special.highlight{
+    color: red;
+    background-color: yellow;
+}
+
+
+/*
+    selettore discendente
+*/
+nav  ul {
+    list-style-type: none;
+}
+
+/* 
+    selettore prossimo fratello
+*/
+h1 + p {    
+    text-transform: uppercase;
+}
+
+/* 
+    selettore di attributo
+*/
+a[title] {
+    color:chartreuse;
+}
+
+/* 
+    selettore pseudo classe
+*/
+a:hover{
+    text-decoration: underline;
+}
+
+article  p {
+    color:gray
+}
+
+/* 
+    selettore pseudo classe
+*/
+article p:first-child {
+    font-weight: 800;
+}
+
+/* 
+    selettore pseudo elemento
+*/
+article p::first-line {
+    background-color: lightgoldenrodyellow  ;
 }
 
