@@ -3,14 +3,3 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h1,h2{
-    color: brown;
-}
-
-h1{
-    font-size: 2.5em;
-}
-
-h2{
-    font-size: 2em;
-}
