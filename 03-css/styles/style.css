@@ -11,6 +11,10 @@ h1 {
     color: red;
 }
 
+h3 {
+    background: lightblue;
+}
+
 /* 
     selettore  list
 */
@@ -25,7 +29,7 @@ li {
 */
 a {
     text-decoration: none;
-    color:cadetblue ;
+    color: cadetblue;
 }
 
 /* 
@@ -39,7 +43,7 @@ a {
     background-color: yellow;
 }
 
-.special.highlight{
+.special.highlight {
     color: red;
     background-color: yellow;
 }
@@ -48,14 +52,14 @@ a {
 /*
     selettore discendente
 */
-nav  ul {
+nav ul {
     list-style-type: none;
 }
 
 /* 
     selettore prossimo fratello
 */
-h1 + p {    
+h1+p {
     text-transform: uppercase;
 }
 
@@ -63,18 +67,12 @@ h1 + p {
     selettore di attributo
 */
 a[title] {
-    color:chartreuse;
+    color: chartreuse;
 }
 
-/* 
-    selettore pseudo classe
-*/
-a:hover{
-    text-decoration: underline;
-}
 
-article  p {
-    color:gray
+article p {
+    color: gray
 }
 
 /* 
@@ -88,6 +86,60 @@ article p:first-child {
     selettore pseudo elemento
 */
 article p::first-line {
-    background-color: lightgoldenrodyellow  ;
+    background-color: lightgoldenrodyellow;
 }
 
+.box {
+    background-color: lightblue;
+    border: 1px solid black;
+    width: 50%;
+    padding: 30px;
+    margin: 50px;
+}
+
+section {
+    background-color: lightblue;
+    border: 1px solid black;
+    padding: 30px;
+}
+
+section>div {
+    background-color: lightgreen;
+    border: 1px solid black;
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+section+p>span {
+    background-color: lightgreen;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+    height: 100px; /*ignorata perchè non è un blocco*/
+}
+
+nav>ul>li {
+    display: inline-block;
+    margin-right: 2px;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav>ul>li>a{
+    color: black;
+    text-decoration: none;
+}   
+
+nav>ul>li:hover {
+    background-color: blue;
+}
+nav>ul>li:hover>a {
+    color: white;
+}
