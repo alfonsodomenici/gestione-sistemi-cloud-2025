@@ -143,3 +143,35 @@ nav>ul>li:hover {
 nav>ul>li:hover>a {
     color: white;
 }
+
+/*
+layout base 
+*/
+
+.assoluta{
+    position: absolute;
+    top: 0;
+    left: 0;    
+    background-color: lightgoldenrodyellow;
+}
+
+.assoluta1{
+    position: absolute;
+    top: 0;
+    right: 0;    
+    background-color: lightgoldenrodyellow;
+}
+
+.relativa{
+    position: relative;
+    top: 50px;
+    left: 100px;    
+    background-color: lightgray;
+}
+
+.fissa{
+    position: fixed;
+    top: 0;
+    left: 0;    
+    background-color: lightblue;
+}
