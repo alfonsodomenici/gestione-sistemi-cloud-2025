@@ -5,7 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flex</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        header {
+            height: 150px;
+            background-color: lightcoral;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header>h1 {
+            color: white;
+        }
+
+        article {
+            background-color: lightblue;
+            border-radius: 5px;
+            padding: 10px 30px;
+            margin: 5px;
+            flex: 1;
+        }
+
+        section {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        article:nth-of-type(3) {
+            flex: 2;
+        }
+        .flex-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 10px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            background-color: lightgreen;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,6 +59,32 @@
             <li><a href="index.html">torna all'indice</a></li>
         </ul>
     </nav>
+    <header>
+        <h1>Sample flexbox example</h1>
+    </header>
+    <section>
+        <article>
+            <h2>First article</h2>
+            <p>Content…</p>
+        </article>
+        <article>
+            <h2>Second article</h2>
+            <p>Content…</p>
+        </article>
+        <article>
+            <h2>Third article</h2>
+            <p>Content…</p>
+        </article>
+        <article>
+            <div class="flex-box">
+                <button type="button">b1</button>
+                <button type="button">b2</button>
+                <button type="button">b3</button>
+                <button type="button">b4</button>
+            </div>
+        </article>
+    </section>
+
 </body>
 
 </html>

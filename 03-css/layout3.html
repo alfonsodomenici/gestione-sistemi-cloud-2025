@@ -5,15 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        @media screen and (max-width: 600px) {
+            body {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 7fr 3fr 1fr;
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "aside"
+                    "footer";
+                column-gap: 10px;
+                row-gap: 10px;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+        body {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 1fr 1fr 10fr 1fr;
+            grid-template-areas:
+                "header header"
+                "nav nav"
+                "aside main"
+                "footer footer";
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+        }
+
+
+
+        header {
+            grid-area: header;
+            background-color: lightcoral;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: lightblue;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: lightgreen;
+        }
+
+        main {
+            grid-area: main;
+            background-color: lightyellow;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: lightgray;
+        }
+    </style>
 </head>
 
 <body>
+    <header>Header</header>
     <nav>
         <ul>
             <li><a href="index.html">torna all'indice</a></li>
         </ul>
     </nav>
+    <aside>Aside</aside>
+    <main>Main</main>
+    <footer>Footer</footer>
 </body>
 
 </html>
