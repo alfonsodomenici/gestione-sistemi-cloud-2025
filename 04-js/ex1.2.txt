@@ -1,0 +1,22 @@
+leggi n1
+leggi n2
+
+conta = 1
+risultato=0
+while(conta<=valore assoluto(n2))
+    risultato = risultato + n1
+    conta=conta + 1
+
+stampa n2<0 ? -risultato : risultato
+
+
+
+//Prove....
+
+n1=3
+n2=2
+conta=1|2|3
+risultato=0|3|6
+
+n1=3
+n2=-2
