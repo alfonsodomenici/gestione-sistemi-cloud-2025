@@ -10,18 +10,23 @@
 
 <body>
     <form>
+        <h1>Moltiplicatore</h1>
         <label>
             Inserisci un numero:
-            <input type="number" name="n1" id="n1">
+            <input type="number" name="n1" id="n1" required>
         </label>
         <label>
             Inserisci un altro numero:
-            <input type="number" name="n2" id="n2">
+            <input type="number" name="n2" id="n2" required>
         </label>
-        <button type="button">Moltiplica</button>
+        <div class="toolbar">
+            <button type="submit">Moltiplica</button>
+            <button type="button">Reset</button>
+        </div>
+        <p>Il risultato è: <span id="result"></span></p>
     </form>
-    <p>Il risultato è: <span id="result"></span></p>
+
 </body>
-<script src="main.js" type="module" ></script>
+<script src="main.js" type="module"></script>
 
 </html>
