@@ -1,5 +1,10 @@
 <script setup>
 import { ref } from 'vue';
+import {useAuth} from '@/composables/auth';
+import { useRouter } from 'vue-router';
+
+const auth = useAuth();
+const router = useRouter();
 
 const formLogin = ref(null);
 const credential = ref({
@@ -9,15 +14,26 @@ const credential = ref({
 
 
 const onLogin = (e) => {
-    console.log(formLogin.value.checkValidity())
-    if(formLogin.value.checkValidity() === false) {
+    console.log('User authenticated:', auth.isAuthenticated());
+
+    if (formLogin.value.checkValidity() === false) {
         formLogin.value.reportValidity();
         console.log('Form login is invalid');
         return;
     }
-    console.log('Login attempt with:', 
+    console.log('Login attempt with:',
         credential.value.mail, credential.value.pwd);
+
+    auth.setToken({id:1, mail: credential.value.mail});
+
+    console.log('User authenticated:',auth.isAuthenticated());
+
+    router.push('/home');
+    
 }
+
+
+
 </script>
 
 <template>
