@@ -37,8 +37,8 @@ const onLogout = () => {
             <div class="navbar-start">
                 <RouterLink v-if="!auth.isAuthenticated()"  to="/" class="navbar-item">Login</RouterLink>
                 <RouterLink v-if="!auth.isAuthenticated()" to="/registration" class="navbar-item">Registrati</RouterLink>
-                <RouterLink v-if="auth.isAuthenticated()" to="/home" class="navbar-item">Prenotazioni</RouterLink>
-                
+                <RouterLink v-if="auth.isAuthenticated()" to="/reservations" class="navbar-item">Le tue Prenotazioni</RouterLink>
+                <RouterLink v-if="auth.isAuthenticated()" to="/create-reservation" class="navbar-item">Prenota</RouterLink>
             </div>
             <div class="navbar-end">
                 <button v-if="auth.isAuthenticated()" @click.prevent="onLogout" class="button">Logout</button>

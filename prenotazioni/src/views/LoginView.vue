@@ -28,7 +28,7 @@ const onLogin = (e) => {
 
     console.log('User authenticated:',auth.isAuthenticated());
 
-    router.push('/home');
+    router.push('/reservations');
     
 }
 
