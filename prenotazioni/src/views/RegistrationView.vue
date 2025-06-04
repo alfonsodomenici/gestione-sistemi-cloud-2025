@@ -14,7 +14,14 @@ const user = ref({
 
 
 const onRegistration = (e) => {
+    console.log("registrazione ");
+    fetch("http://localhost:5000/hello", {
+        method: "GET"
+    })
+        .then(response => response.json())
+        .then(json => console.log(json))
 
+    /*
     if (regForm.value.checkValidity() === false) {
         regForm.value.reportValidity();
         console.log('Form registration is invalid');
@@ -26,6 +33,7 @@ const onRegistration = (e) => {
         user.value.mail, user.value.pwd);
 
     router.push('/'); // Redirect to login after registration
+*/
 
     // Here you would typically send the data to your backend
     // For example:
@@ -58,7 +66,7 @@ const onRegistration = (e) => {
             <div class="field">
                 <label class="label">Tel</label>
                 <div class="control">
-                    <input v-model="user.tel" class="input" type="tel" name="tel" id="tel" >
+                    <input v-model="user.tel" class="input" type="tel" name="tel" id="tel">
                 </div>
             </div>
             <div class="field">
