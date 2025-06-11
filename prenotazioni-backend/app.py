@@ -18,3 +18,13 @@ db.init_app(app)
 def registration():
     print("Registration endpoint hit")
     return Response(json.dumps({"message": "Registration endpoint"}), status=200, mimetype='application/json')
+
+
+def testdb():
+    try:
+        cursor = db.connection.cursor()
+        cursor.execute("SELECT * FROM t_user ")
+        results = cursor.fetchall()
+        return Response(json.dumps(results), mimetype='application/json')
+    except Exception as e:
+        return Response(json.dumps({"error": str(e)}), mimetype='application/json')@app.route("/testdb")
