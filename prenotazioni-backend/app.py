@@ -14,11 +14,19 @@ app.config['MYSQL_DB'] = 'db25_prova'
 app.config['MYSQL_CURSORCLASS']="DictCursor"
 db.init_app(app)
 
-@app.route("/registration")
+@app.route("/registration", methods=['POST'])
 def registration():
-    print("Registration endpoint hit")
-    return Response(json.dumps({"message": "Registration endpoint"}), status=200, mimetype='application/json')
-
+    firstname,lastname,phone, mail,pwd =  request.json.values()
+    q = f"""
+        insert into t_user (firstname,lastname,phone,mail,pwd) 
+        values ('{firstname}','{lastname}','{phone}','{mail}','{pwd}')
+        """
+    conn = db.connection
+    cursor = conn.cursor()
+    cursor.execute(q)
+    conn.commit()
+    lastid = cursor.lastrowid
+    return Response(json.dumps({"id": lastid}), mimetype='application/json')
 
 def testdb():
     try:

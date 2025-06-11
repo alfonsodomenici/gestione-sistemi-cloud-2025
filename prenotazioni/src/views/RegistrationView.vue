@@ -14,14 +14,7 @@ const user = ref({
 
 
 const onRegistration = (e) => {
-    console.log("registrazione ");
-    fetch("http://localhost:5000/registration", {
-        method: "GET"
-    })
-        .then(response => response.json())
-        .then(json => console.log(json))
 
-    /*
     if (regForm.value.checkValidity() === false) {
         regForm.value.reportValidity();
         console.log('Form registration is invalid');
@@ -32,18 +25,25 @@ const onRegistration = (e) => {
         user.value.nome, user.value.cognome, user.value.tel,
         user.value.mail, user.value.pwd);
 
+    const data = {
+        firstname: user.value.nome,
+        lastname: user.value.cognome,
+        phone: user.value.tel,
+        mail: user.value.mail,
+        pwd: user.value.pwd
+    }
+    
+    fetch("http://localhost:5000/registration", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(json => console.log(json))
     router.push('/'); // Redirect to login after registration
-*/
 
-    // Here you would typically send the data to your backend
-    // For example:
-    // axios.post('/api/register', user.value)
-    //     .then(response => {
-    //         console.log('Registration successful:', response.data);
-    //     })
-    //     .catch(error => {
-    //         console.error('Registration failed:', error);
-    //     });
 }
 </script>
 
