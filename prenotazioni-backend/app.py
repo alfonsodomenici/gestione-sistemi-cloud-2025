@@ -1,6 +1,7 @@
 from flask import Flask,request,json, Response
 from flask_cors import CORS
 from flask_mysqldb import MySQL
+from http import HTTPStatus
 
 app = Flask(__name__)
 cors = CORS()
@@ -27,6 +28,20 @@ def registration():
     conn.commit()
     lastid = cursor.lastrowid
     return Response(json.dumps({"id": lastid}), mimetype='application/json')
+
+@app.route("/login", methods=['POST'])
+def login():
+    mail, pwd = request.json.values()
+    q = f"""
+        select id_user as id,mail from t_user where mail='{mail}' and pwd='{pwd}'
+        """
+    cursor = db.connection.cursor()
+    cursor.execute(q)
+    user = cursor.fetchone()
+    if user:
+        return Response(json.dumps(user), mimetype='application/json')
+    else:
+        return Response(response="login failed", status=HTTPStatus.FORBIDDEN, content_type='text/plain')
 
 def testdb():
     try:

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import {useAuth} from '@/composables/auth';
+import { useAuth } from '@/composables/auth';
 import { useRouter } from 'vue-router';
 
 const auth = useAuth();
@@ -24,12 +24,37 @@ const onLogin = (e) => {
     console.log('Login attempt with:',
         credential.value.mail, credential.value.pwd);
 
-    auth.setToken({id:1, mail: credential.value.mail});
+    const data = {
+        mail: credential.value.mail,
+        pwd: credential.value.pwd
+    }
 
-    console.log('User authenticated:',auth.isAuthenticated());
+    fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (!response.ok) {
+                alert('Login failed: ' + response.statusText);
+                throw new Error('Login failed');
+            }
+            return response.json();
+        })
+        .then(json => {
+            console.log('Login successful:', json);
+            auth.setToken(json);
+            console.log('User authenticated:', auth.isAuthenticated());
+            router.push('/reservations');
+        })
+        .catch(error => {
+            console.error('Error during login:', error);
+        });
 
-    router.push('/reservations');
-    
+
+
 }
 
 
