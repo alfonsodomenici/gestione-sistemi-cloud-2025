@@ -15,7 +15,7 @@ const user = ref({
 
 const onRegistration = (e) => {
     console.log("registrazione ");
-    fetch("http://localhost:5000/hello", {
+    fetch("http://localhost:5000/registration", {
         method: "GET"
     })
         .then(response => response.text())
