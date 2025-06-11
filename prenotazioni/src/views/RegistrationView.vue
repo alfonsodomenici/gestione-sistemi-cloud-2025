@@ -18,8 +18,8 @@ const onRegistration = (e) => {
     fetch("http://localhost:5000/hello", {
         method: "GET"
     })
-        .then(response => response.json())
-        .then(json => console.log(json))
+        .then(response => response.text())
+        .then(text => console.log(text))
 
     /*
     if (regForm.value.checkValidity() === false) {
