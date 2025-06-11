@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,request,json, Response
 from flask_cors import CORS
 from flask_mysqldb import MySQL
 
@@ -11,8 +11,10 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'root'
 app.config['MYSQL_DB'] = 'db25_prova'
+app.config['MYSQL_CURSORCLASS']="DictCursor"
 db.init_app(app)
 
 @app.route("/registration")
 def registration():
-    return "Registration endpoint"
+    print("Registration endpoint hit")
+    return Response(json.dumps({"message": "Registration endpoint"}), status=200, mimetype='application/json')
