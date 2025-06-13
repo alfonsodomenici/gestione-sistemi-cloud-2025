@@ -43,6 +43,18 @@ def login():
     else:
         return Response(response="login failed", status=HTTPStatus.FORBIDDEN, content_type='text/plain')
 
+@app.route("/prenotazioni/<int:user_id>")
+def prenotazioni(user_id):
+    try:
+        cursor = db.connection.cursor()
+        q = f"SELECT * FROM t_prenotazione WHERE id_user={user_id}"
+        cursor.execute(q)
+        results = cursor.fetchall()
+        return Response(json.dumps(results), mimetype='application/json')
+    except Exception as e:
+        return Response(json.dumps({"error": str(e)}), mimetype='application/json')
+    
+
 @app.route("/test")
 def testdb():
     try:
