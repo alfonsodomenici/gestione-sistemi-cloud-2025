@@ -43,6 +43,7 @@ def login():
     else:
         return Response(response="login failed", status=HTTPStatus.FORBIDDEN, content_type='text/plain')
 
+@app.route("/test")
 def testdb():
     try:
         cursor = db.connection.cursor()
