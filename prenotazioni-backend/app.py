@@ -47,7 +47,7 @@ def login():
 def prenotazioni(user_id):
     try:
         cursor = db.connection.cursor()
-        q = f"SELECT * FROM t_prenotazione WHERE id_user={user_id}"
+        q = f"SELECT id_prenotazione as id,t.tipo,t.costo,datavisita,note FROM t_prenotazione p join t_tipo t on p.id_tipo = t.id_tipo WHERE id_user={user_id}"
         cursor.execute(q)
         results = cursor.fetchall()
         return Response(json.dumps(results), mimetype='application/json')
