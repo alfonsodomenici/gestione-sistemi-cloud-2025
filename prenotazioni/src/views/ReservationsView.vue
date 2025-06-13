@@ -17,10 +17,6 @@ fetch(`http://localhost:5000/prenotazioni/${useAuth().getToken().id}`, {
 .catch(error => {
     console.error("Error fetching reservations:", error);
 });
-
-
-
-
 </script>
 
 <template>
